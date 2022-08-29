@@ -38,7 +38,7 @@ def video_note(message):
 		out_dir = f'output/{src}'
 		# resize this file
 		resize = Resize(path_from=f'{save_dir}/{src}', path_to=out_dir)
-		resize.res_video()
+		resize.resize_video()
 		path = f'output/{message.chat.id}.mp4'
 		bot.edit_message_text('sends video note...', message.chat.id, message_id=sent_message.message_id)
 		file = open(path, 'rb')
@@ -68,7 +68,7 @@ def video_note_animation(message):
 		bot.edit_message_text('resize video...', message.chat.id, message_id=sent_message.message_id)
 		out_dir = f'output/{src}'
 		resize = Resize(path_from=f'{save_dir}/{src}', path_to=out_dir)
-		resize.res_video()
+		resize.resize_video()
 		path = f'output/{message.chat.id}.mp4'
 		bot.edit_message_text('sends video note...', message.chat.id, message_id=sent_message.message_id)
 		file = open(path, 'rb')
